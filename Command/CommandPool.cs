@@ -16,6 +16,9 @@ namespace Command
         #endregion
 
         #region properties
+        /// <summary>
+        /// 命令总数
+        /// </summary>
         public int TotalCommandCount
         {
             get
@@ -23,7 +26,9 @@ namespace Command
                 return toUndoDeque.Count;
             }
         }
-
+        /// <summary>
+        /// 撤销总数
+        /// </summary>
         public int TotalUndoCommandCount
         {
             get
@@ -31,7 +36,9 @@ namespace Command
                 return toUndoDeque.Count;
             }
         }
-
+        /// <summary>
+        /// 重做总数
+        /// </summary>
         public int TotalRedoCommandCount
         {
             get
