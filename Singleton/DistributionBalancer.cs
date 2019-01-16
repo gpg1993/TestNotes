@@ -11,6 +11,7 @@ namespace Singleton
     {
         private static DistributionBalancer intance = null;
         private List<HttpServer> httpServers;
+        private static readonly object syncLocker = new object();
         private DistributionBalancer()
         {
             httpServers = new List<HttpServer>();
@@ -20,7 +21,11 @@ namespace Singleton
         {
             if (intance==null)
             {
-                intance = new DistributionBalancer();
+                lock (syncLocker)
+                {
+                    if(intance ==null)
+                        intance = new DistributionBalancer();
+                }
             }
             return intance;
         }

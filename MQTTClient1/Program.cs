@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MQTTnet;
+using MQTTnet.Client;
+using MQTTnet.Protocol;
+using System;
 
 namespace MQTTClient1
 {
@@ -6,7 +9,106 @@ namespace MQTTClient1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MqttClientService mqttClientService = new MqttClientService();
+            for (int i = 0; i < 1000; i++)
+            {
+                IMqttClient mqttClient = mqttClientService.CreateMqttClient();
+                mqttClient.ApplicationMessageReceived += MqttClient_ApplicationMessageReceived;
+                mqttClient.Connected += MqttClient_Connected;
+                mqttClient.Disconnected += MqttClient_Disconnected;
+
+                MqttClientOptions mqttClientOptions = CreateOptions(ProtocolType.TCP, "192.168.1.6");
+                mqttClientService.ConnectServer(mqttClient, mqttClientOptions);
+                //var topicFilter = new TopicFilterBuilder().WithTopic("A/B/C").WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce);
+                //mqttClientService.SubscribeMessage(mqttClient, topicFilter);
+            }
+
+        }
+
+        private static MqttClientOptions CreateOptions(ProtocolType protocolType, string IpAddress)
+        {
+            try
+            {
+                //启用TLS
+                var tlsOptions = new MqttClientTlsOptions
+                {
+                    UseTls = true,
+                    IgnoreCertificateChainErrors = true,
+                    IgnoreCertificateRevocationErrors = true,
+                    AllowUntrustedCertificates = true
+                };
+                var options = new MqttClientOptions
+                {
+                    ClientId = Guid.NewGuid().ToString(),
+                };
+                switch (protocolType)
+                {
+                    case ProtocolType.TCP:
+                        options.ChannelOptions = new MqttClientTcpOptions
+                        {
+                            Server = IpAddress,
+                            Port = 8880
+                            //TlsOptions = tlsOptions
+                        };
+                        break;
+                    case ProtocolType.WS:
+                        options.ChannelOptions = new MqttClientWebSocketOptions
+                        {
+                            Uri = IpAddress,
+                            TlsOptions = tlsOptions,
+                            
+                        };
+                        break;
+                    default:
+                        break;
+                }
+                if (options.ChannelOptions == null)
+                {
+                    throw new InvalidOperationException();
+                }
+                //设定证书
+                options.Credentials = new MqttClientCredentials
+                {
+                    Username = "USER",
+                    Password = "PASS"
+                };
+
+                options.CleanSession = true;//会话清除
+                options.KeepAlivePeriod = TimeSpan.FromSeconds(10);
+
+                //==遗言
+                //WillMessage = new MqttApplicationMessage()
+                //{
+                //    Topic = txt_topic.Text.Trim(),
+                //    Payload = (Encoding.UTF8.GetBytes("我的遗言")),
+                //    QualityOfServiceLevel = MqttQualityOfServiceLevel.AtMostOnce,
+                //    Retain = false
+
+                //},
+                //ProtocolVersion = MQTTnet.Serializer.MqttProtocolVersion.V311,
+                return options;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private static void MqttClient_Disconnected(object sender, MqttClientDisconnectedEventArgs e)
+        {
+            Console.WriteLine($"客户端{e.ClientWasConnected}");
+        }
+
+        private static void MqttClient_Connected(object sender, MqttClientConnectedEventArgs e)
+        {
+            Console.WriteLine($"客户端{e.IsSessionPresent}");
+        }
+
+        private static void MqttClient_ApplicationMessageReceived(object sender, MqttApplicationMessageReceivedEventArgs e)
+        {
+            Console.WriteLine($"客户端{e.ClientId},主题为{e.ApplicationMessage.Topic}，消息{e.ApplicationMessage.Payload}");
         }
     }
 }

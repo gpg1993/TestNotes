@@ -53,7 +53,7 @@ namespace ResourceOwnerPasswords.Client
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
     }
