@@ -39,8 +39,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructure", "DataStruct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "Command\Command.csproj", "{835E0E66-8A24-4E14-B6F7-71620E66E9DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{E6AC8B13-A039-45D5-9511-5142000BE712}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,10 +81,6 @@ Global
 		{835E0E66-8A24-4E14-B6F7-71620E66E9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{835E0E66-8A24-4E14-B6F7-71620E66E9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{835E0E66-8A24-4E14-B6F7-71620E66E9DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6AC8B13-A039-45D5-9511-5142000BE712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6AC8B13-A039-45D5-9511-5142000BE712}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6AC8B13-A039-45D5-9511-5142000BE712}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6AC8B13-A039-45D5-9511-5142000BE712}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,7 +97,6 @@ Global
 		{68BD60A3-4105-487B-B70C-76F6BE8FD837} = {54CB62D7-72EC-4823-8A20-F2DB1A726194}
 		{C0CA9724-BE99-422C-822F-FDF37E1EFE92} = {DA0CED65-5D31-4839-BFCB-C81CBAAAFCF2}
 		{835E0E66-8A24-4E14-B6F7-71620E66E9DF} = {B25CE52F-E8D1-4B84-B025-E06FB37339A6}
-		{E6AC8B13-A039-45D5-9511-5142000BE712} = {B25CE52F-E8D1-4B84-B025-E06FB37339A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B596CF8-D25B-4CEF-82E4-82AB1EA38E47}
