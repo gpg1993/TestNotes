@@ -2,6 +2,8 @@
 using MQTTnet.Client;
 using MQTTnet.Protocol;
 using System;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MQTTClient1
 {
@@ -9,21 +11,32 @@ namespace MQTTClient1
     {
         static void Main(string[] args)
         {
-            MqttClientService mqttClientService = new MqttClientService();
+            GetTaskFor();
+            Console.ReadLine();
+        }
+
+        public static async Task GetTaskFor()
+        {
             for (int i = 0; i < 1000; i++)
             {
-                IMqttClient mqttClient = mqttClientService.CreateMqttClient();
-                mqttClient.ApplicationMessageReceived += MqttClient_ApplicationMessageReceived;
-                mqttClient.Connected += MqttClient_Connected;
-                mqttClient.Disconnected += MqttClient_Disconnected;
-
-                MqttClientOptions mqttClientOptions = CreateOptions(ProtocolType.TCP, "192.168.1.6");
-                mqttClientService.ConnectServer(mqttClient, mqttClientOptions);
-                //var topicFilter = new TopicFilterBuilder().WithTopic("A/B/C").WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce);
-                //mqttClientService.SubscribeMessage(mqttClient, topicFilter);
+                await startClient();
             }
-
         }
+
+        public static async Task startClient()
+        {
+            MqttClientService mqttClientService = new MqttClientService();
+            IMqttClient mqttClient = mqttClientService.CreateMqttClient();
+            mqttClient.ApplicationMessageReceived += MqttClient_ApplicationMessageReceived;
+            mqttClient.Connected += MqttClient_Connected;
+            mqttClient.Disconnected += MqttClient_Disconnected;
+
+            MqttClientOptions mqttClientOptions = CreateOptions(ProtocolType.TCP, "127.0.0.1");
+            await mqttClientService.ConnectServer(mqttClient, mqttClientOptions);
+            var topicFilter = new TopicFilterBuilder().WithTopic("A/B/C").WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce);
+            await mqttClientService.SubscribeMessage(mqttClient, topicFilter);
+        }
+
 
         private static MqttClientOptions CreateOptions(ProtocolType protocolType, string IpAddress)
         {
@@ -47,7 +60,7 @@ namespace MQTTClient1
                         options.ChannelOptions = new MqttClientTcpOptions
                         {
                             Server = IpAddress,
-                            Port = 8880
+                            //Port = 8880
                             //TlsOptions = tlsOptions
                         };
                         break;
@@ -108,7 +121,7 @@ namespace MQTTClient1
 
         private static void MqttClient_ApplicationMessageReceived(object sender, MqttApplicationMessageReceivedEventArgs e)
         {
-            Console.WriteLine($"客户端{e.ClientId},主题为{e.ApplicationMessage.Topic}，消息{e.ApplicationMessage.Payload}");
+            Console.WriteLine($"客户端{e.ClientId},主题为{e.ApplicationMessage.Topic}，消息{Encoding.UTF8.GetString(e.ApplicationMessage.Payload)}");
         }
     }
 }

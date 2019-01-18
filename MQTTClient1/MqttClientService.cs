@@ -5,6 +5,7 @@ using MQTTnet.Protocol;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MQTTClient1
 {
@@ -14,11 +15,11 @@ namespace MQTTClient1
         {
             return new MqttFactory().CreateMqttClient() as MqttClient;
         }
-        public void ConnectServer(IMqttClient mqttClient, MqttClientOptions mqttClientOptions)
+        public async Task ConnectServer(IMqttClient mqttClient, MqttClientOptions mqttClientOptions)
         {
             try
             {
-                mqttClient.ConnectAsync(mqttClientOptions);
+               await  mqttClient.ConnectAsync(mqttClientOptions);
             }
             catch (MqttCommunicationException ee)
             {
@@ -49,12 +50,12 @@ namespace MQTTClient1
 
             await mqttClient.PublishAsync(mqttApplicationMessageBuilder.Build());
         }
-        public async void SubscribeMessage(IMqttClient mqttClient, TopicFilterBuilder topicFilterBuilder)
+        public async Task SubscribeMessage(IMqttClient mqttClient, TopicFilterBuilder topicFilterBuilder)
         {
             //var a = new TopicFilterBuilder().WithTopic("").WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce);
             await mqttClient.SubscribeAsync(topicFilterBuilder.Build());
         }
-        public async void UnsubscribeMessage(IMqttClient mqttClient, string topic)
+        public async Task UnsubscribeMessage(IMqttClient mqttClient, string topic)
         {
             if (string.IsNullOrEmpty(topic))
             {
