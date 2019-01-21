@@ -53,6 +53,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Websocket-sharpcore", "Webs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "websocket-sharpcore", "websocket-sharpcore\websocket-sharpcore.csproj", "{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocketSharpClient", "WebSocketSharpClient\WebSocketSharpClient.csproj", "{F7705683-947E-4AA5-84BA-C3C0D2731E17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketSharpServer", "WebSocketSharpServer\WebSocketSharpServer.csproj", "{AB239127-02EA-4797-8E2B-58D5B899FF67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7705683-947E-4AA5-84BA-C3C0D2731E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7705683-947E-4AA5-84BA-C3C0D2731E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7705683-947E-4AA5-84BA-C3C0D2731E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7705683-947E-4AA5-84BA-C3C0D2731E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB239127-02EA-4797-8E2B-58D5B899FF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB239127-02EA-4797-8E2B-58D5B899FF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB239127-02EA-4797-8E2B-58D5B899FF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB239127-02EA-4797-8E2B-58D5B899FF67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,6 +145,8 @@ Global
 		{92AA8266-89A8-4E3C-A43F-550B38ED8709} = {B25CE52F-E8D1-4B84-B025-E06FB37339A6}
 		{39801E0D-73C2-4FB4-B263-C41AEF629CAC} = {1D16A371-672A-4E0C-9896-43413292017D}
 		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE} = {39801E0D-73C2-4FB4-B263-C41AEF629CAC}
+		{F7705683-947E-4AA5-84BA-C3C0D2731E17} = {39801E0D-73C2-4FB4-B263-C41AEF629CAC}
+		{AB239127-02EA-4797-8E2B-58D5B899FF67} = {39801E0D-73C2-4FB4-B263-C41AEF629CAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B596CF8-D25B-4CEF-82E4-82AB1EA38E47}
