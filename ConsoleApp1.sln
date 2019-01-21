@@ -49,6 +49,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTServer", "MQTTServer\MQ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "Singleton\Singleton.csproj", "{92AA8266-89A8-4E3C-A43F-550B38ED8709}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Websocket-sharpcore", "Websocket-sharpcore", "{39801E0D-73C2-4FB4-B263-C41AEF629CAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "websocket-sharpcore", "websocket-sharpcore\websocket-sharpcore.csproj", "{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{92AA8266-89A8-4E3C-A43F-550B38ED8709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92AA8266-89A8-4E3C-A43F-550B38ED8709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92AA8266-89A8-4E3C-A43F-550B38ED8709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +131,8 @@ Global
 		{602DC3CD-0DDF-4CFD-9C0B-581841398926} = {2148B579-0A4D-44CF-A74E-4DA8F89A6AA4}
 		{D2E65D5F-B642-4E7E-B7A0-5D63DDD8E96F} = {2148B579-0A4D-44CF-A74E-4DA8F89A6AA4}
 		{92AA8266-89A8-4E3C-A43F-550B38ED8709} = {B25CE52F-E8D1-4B84-B025-E06FB37339A6}
+		{39801E0D-73C2-4FB4-B263-C41AEF629CAC} = {1D16A371-672A-4E0C-9896-43413292017D}
+		{49D428FE-E4A2-4435-A2D6-4CF11668DAFE} = {39801E0D-73C2-4FB4-B263-C41AEF629CAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B596CF8-D25B-4CEF-82E4-82AB1EA38E47}
