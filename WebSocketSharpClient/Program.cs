@@ -12,7 +12,7 @@ namespace WebSocketSharpClient
             WebSocketRun();
         }
 
-        public static async Task WebSocketRun()
+        public static void WebSocketRun()
         {
             var ws = new WebSocket("ws://dragonsnest.far/Laputa");
             ws.OnMessage += Ws_OnMessage;
