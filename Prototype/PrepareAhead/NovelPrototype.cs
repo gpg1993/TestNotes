@@ -18,7 +18,10 @@ namespace Prototype.PrepareAhead
     public class NovelCharacter
     {
         public string NovelCharacterName { get; set; }
-        public string NovelCharacterAge { get; set; }
+        public int NovelCharacterAge { get; set; }
+        /// <summary>
+        /// 是否主角（0：不是，1：是）
+        /// </summary>
         public int NovelCharacterIsLead { get; set; }
     }
 }
