@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTClient1", "MQTTClient1\MQTTClient1.csproj", "{610C7B04-526F-46F9-838C-E9CA5089CAC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTServer", "MQTTServer\MQTTServer.csproj", "{79874E82-D991-4CB2-BBD7-65B7B0CF7118}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocketSharpClient", "WebSocketSharpClient\WebSocketSharpClient.csproj", "{896B8A53-86D3-478E-A8A8-331F53C07A6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "websocket-sharpcore", "websocket-sharpcore\websocket-sharpcore.csproj", "{37B47DC2-B178-40FA-914C-30D12B8EEFC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocketSharpServer", "WebSocketSharpServer\WebSocketSharpServer.csproj", "{E22DB52F-BCAA-4D59-87BB-93A68EF79825}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mqttnet", "Mqttnet", "{3113ADEC-161C-485B-89B1-EF2654DD1F8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSocketSharp", "WebSocketSharp", "{1D662D2B-DC4E-4C65-A64C-C7765D69895A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{610C7B04-526F-46F9-838C-E9CA5089CAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610C7B04-526F-46F9-838C-E9CA5089CAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610C7B04-526F-46F9-838C-E9CA5089CAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610C7B04-526F-46F9-838C-E9CA5089CAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79874E82-D991-4CB2-BBD7-65B7B0CF7118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79874E82-D991-4CB2-BBD7-65B7B0CF7118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79874E82-D991-4CB2-BBD7-65B7B0CF7118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79874E82-D991-4CB2-BBD7-65B7B0CF7118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896B8A53-86D3-478E-A8A8-331F53C07A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896B8A53-86D3-478E-A8A8-331F53C07A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896B8A53-86D3-478E-A8A8-331F53C07A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896B8A53-86D3-478E-A8A8-331F53C07A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B47DC2-B178-40FA-914C-30D12B8EEFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B47DC2-B178-40FA-914C-30D12B8EEFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B47DC2-B178-40FA-914C-30D12B8EEFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B47DC2-B178-40FA-914C-30D12B8EEFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22DB52F-BCAA-4D59-87BB-93A68EF79825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22DB52F-BCAA-4D59-87BB-93A68EF79825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22DB52F-BCAA-4D59-87BB-93A68EF79825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22DB52F-BCAA-4D59-87BB-93A68EF79825}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{610C7B04-526F-46F9-838C-E9CA5089CAC1} = {3113ADEC-161C-485B-89B1-EF2654DD1F8E}
+		{79874E82-D991-4CB2-BBD7-65B7B0CF7118} = {3113ADEC-161C-485B-89B1-EF2654DD1F8E}
+		{896B8A53-86D3-478E-A8A8-331F53C07A6C} = {1D662D2B-DC4E-4C65-A64C-C7765D69895A}
+		{37B47DC2-B178-40FA-914C-30D12B8EEFC6} = {1D662D2B-DC4E-4C65-A64C-C7765D69895A}
+		{E22DB52F-BCAA-4D59-87BB-93A68EF79825} = {1D662D2B-DC4E-4C65-A64C-C7765D69895A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E608123-82AC-4233-B798-0369308838FF}
+	EndGlobalSection
+EndGlobal

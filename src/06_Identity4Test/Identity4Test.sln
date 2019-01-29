@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credentials.Api", "Credentials.Api\Credentials.Api.csproj", "{D7E27D32-6F30-4CDC-8800-6E7BF791CB5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credentials.Client", "Credentials.Client\Credentials.Client.csproj", "{25F9F719-CB9E-4EE5-9E0A-E8BDFE2F7B29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credentials.IdentityServer", "Credentials.IdentityServer\Credentials.IdentityServer.csproj", "{664C64DF-82F0-4ECB-A9C2-79FF47383DEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceOwnerPasswords.APi", "ResourceOwnerPasswords.APi\ResourceOwnerPasswords.APi.csproj", "{F040A6C7-6737-4179-8BBE-7A047FC4B87A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceOwnerPasswords.Client", "ResourceOwnerPasswords.Client\ResourceOwnerPasswords.Client.csproj", "{63C36F75-1821-46D5-B8A2-14D04B7CD28C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceOwnerPasswords.IdentityServer", "ResourceOwnerPasswords.IdentityServer\ResourceOwnerPasswords.IdentityServer.csproj", "{5B75D631-AF54-457D-B8B5-FF48FDE20C18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7E27D32-6F30-4CDC-8800-6E7BF791CB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E27D32-6F30-4CDC-8800-6E7BF791CB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E27D32-6F30-4CDC-8800-6E7BF791CB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E27D32-6F30-4CDC-8800-6E7BF791CB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F9F719-CB9E-4EE5-9E0A-E8BDFE2F7B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F9F719-CB9E-4EE5-9E0A-E8BDFE2F7B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F9F719-CB9E-4EE5-9E0A-E8BDFE2F7B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F9F719-CB9E-4EE5-9E0A-E8BDFE2F7B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664C64DF-82F0-4ECB-A9C2-79FF47383DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664C64DF-82F0-4ECB-A9C2-79FF47383DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664C64DF-82F0-4ECB-A9C2-79FF47383DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664C64DF-82F0-4ECB-A9C2-79FF47383DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F040A6C7-6737-4179-8BBE-7A047FC4B87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F040A6C7-6737-4179-8BBE-7A047FC4B87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F040A6C7-6737-4179-8BBE-7A047FC4B87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F040A6C7-6737-4179-8BBE-7A047FC4B87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C36F75-1821-46D5-B8A2-14D04B7CD28C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C36F75-1821-46D5-B8A2-14D04B7CD28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C36F75-1821-46D5-B8A2-14D04B7CD28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C36F75-1821-46D5-B8A2-14D04B7CD28C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B75D631-AF54-457D-B8B5-FF48FDE20C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B75D631-AF54-457D-B8B5-FF48FDE20C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B75D631-AF54-457D-B8B5-FF48FDE20C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B75D631-AF54-457D-B8B5-FF48FDE20C18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {772ABDA1-D513-4E7F-9848-BABA12884E41}
+	EndGlobalSection
+EndGlobal
