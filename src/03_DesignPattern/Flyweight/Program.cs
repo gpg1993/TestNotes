@@ -24,13 +24,13 @@ namespace Flyweight
             Soldier soldier4 = soldierFactory.GetSoldier(StandType.blue);
             Soldier soldier5 = soldierFactory.GetSoldier(StandType.blue);
 
-            Console.WriteLine("判断两颗黑子是否相同：{0}", object.ReferenceEquals(soldier1, soldier2));
+            Console.WriteLine("判断两个士兵是否相同：{0}", object.ReferenceEquals(soldier1, soldier2));
 
             Soldier soldier6 = soldierFactory.GetSoldier(StandType.red);
             Soldier soldier7 = soldierFactory.GetSoldier(StandType.red);
             Soldier soldier8 = soldierFactory.GetSoldier(StandType.red);
 
-            Console.WriteLine("判断两颗黑子是否相同：{0}", object.ReferenceEquals(soldier6, soldier7));
+            Console.WriteLine("判断两个士兵是否相同：{0}", object.ReferenceEquals(soldier6, soldier7));
 
             soldier1.attack(new Target { TargetName = "A高地", x = 0, y = 1 });
             soldier2.attack(new Target { TargetName = "A高地", x = 0, y = 1 });
