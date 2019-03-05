@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DataStructure
 {
+    /// <summary>
+    /// 八种hash算法
+    /// </summary>
     public static class HashFuncUnity
     {
         /// <summary>
