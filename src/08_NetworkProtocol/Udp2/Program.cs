@@ -18,7 +18,9 @@ namespace Udp2
 
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// 监听ip+端口
+        /// </summary>
         public static void ListenUdp1()
         {
             IPAddress address1 = IPAddress.Parse("127.138.2.2");
@@ -37,10 +39,12 @@ namespace Udp2
                     Console.WriteLine(text);
                 }
             };
-            Action action = () => { };
             Task task1 = new Task(() => UdpAction(uc));
             task1.Start();
         }
+        /// <summary>
+        /// 监听端口
+        /// </summary>
         public static void ListenUdp2()
         {
             UdpClient uc = new UdpClient(8080);
@@ -57,9 +61,15 @@ namespace Udp2
                     Console.WriteLine(text);
                 }
             };
-            Action action = () => { };
             Task task1 = new Task(() => UdpAction(uc));
             task1.Start();
+            var sendTask1 = new Task(() => {
+                UdpClient udpClient1 = new UdpClient();
+                byte[] c = System.Text.Encoding.UTF8.GetBytes("huixinggeini1");
+                udpClient1.Send(c, c.Length, Dns.GetHostName(), 8088);
+            });
+            sendTask1.Start();
         }
+        
     }
 }
