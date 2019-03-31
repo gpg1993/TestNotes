@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <assembly>
+    <name>MagicOnionServer</name>
+  </assembly>
+  <members>
+    <member name="T:MagicOnionServer.ICalcSerivce">
+      <summary>
+        计算器服务
+      </summary>
+    </member>
+    <member name="M:MagicOnionServer.ICalcSerivce.ExceptAsync(System.Int32,System.Int32)">
+      <summary>
+        除。
+      </summary>
+      <param name="x">多分X。</param>
+      <param name="y">多分Y。</param>
+      <returns>返回String。</returns>
+    </member>
+    <member name="M:MagicOnionServer.ICalcSerivce.ReduceAsync(System.Int32,System.Int32)">
+      <summary>
+        乘。
+      </summary>
+      <param name="x">多分X。</param>
+      <param name="y">多分Y。</param>
+      <returns>返回String。</returns>
+    </member>
+    <member name="M:MagicOnionServer.ICalcSerivce.RideAsync(System.Int32,System.Int32)">
+      <summary>
+        减。
+      </summary>
+      <param name="x">多分X。</param>
+      <param name="y">多分Y。</param>
+      <returns>返回String。</returns>
+    </member>
+    <member name="M:MagicOnionServer.ICalcSerivce.SumAsync(System.Int32,System.Int32)">
+      <summary>
+        加。
+      </summary>
+      <param name="x">多分X。</param>
+      <param name="y">多分Y。</param>
+      <returns>返回String。</returns>
+    </member>
+    <member name="M:MagicOnionServer.ICalcSerivce.test1Async(System.Int32,System.Int32)">
+      <summary>
+        测试。
+      </summary>
+      <returns>返回String。</returns>
+    </member>
+  </members>
+</doc>
