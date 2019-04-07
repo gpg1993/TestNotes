@@ -36,6 +36,11 @@ namespace MagicOnionServer
                 IsReturnExceptionStackTraceInErrorDetail = false,//ture:程序本身处理异常，并返回消息。false:扩散到grpc引擎。默认为false
                                                                  //ServiceLocator //添加扩充本地服务
             });
+            //var server = new global::Grpc.Core.Server
+            //{
+            //    Services = { service },
+            //    Ports = { new ServerPort(GrpcHost, 123456, ServerCredentials.Insecure) }
+            //};
             var server = new global::Grpc.Core.Server
             {
                 Services = { service },

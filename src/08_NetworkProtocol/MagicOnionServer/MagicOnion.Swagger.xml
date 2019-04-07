@@ -4,12 +4,12 @@
     <name>MagicOnionServer</name>
   </assembly>
   <members>
-    <member name="T:MagicOnionServer.ICalcSerivce">
+    <member name="T:MagicOnionServer.ICalcService">
       <summary>
         计算器服务
       </summary>
     </member>
-    <member name="M:MagicOnionServer.ICalcSerivce.ExceptAsync(System.Int32,System.Int32)">
+    <member name="M:MagicOnionServer.ICalcService.ExceptAsync(System.Int32,System.Int32)">
       <summary>
         除。
       </summary>
@@ -17,7 +17,7 @@
       <param name="y">多分Y。</param>
       <returns>返回String。</returns>
     </member>
-    <member name="M:MagicOnionServer.ICalcSerivce.ReduceAsync(System.Int32,System.Int32)">
+    <member name="M:MagicOnionServer.ICalcService.ReduceAsync(System.Int32,System.Int32)">
       <summary>
         乘。
       </summary>
@@ -25,7 +25,7 @@
       <param name="y">多分Y。</param>
       <returns>返回String。</returns>
     </member>
-    <member name="M:MagicOnionServer.ICalcSerivce.RideAsync(System.Int32,System.Int32)">
+    <member name="M:MagicOnionServer.ICalcService.RideAsync(System.Int32,System.Int32)">
       <summary>
         减。
       </summary>
@@ -33,7 +33,7 @@
       <param name="y">多分Y。</param>
       <returns>返回String。</returns>
     </member>
-    <member name="M:MagicOnionServer.ICalcSerivce.SumAsync(System.Int32,System.Int32)">
+    <member name="M:MagicOnionServer.ICalcService.SumAsync(System.Int32,System.Int32)">
       <summary>
         加。
       </summary>
@@ -41,11 +41,23 @@
       <param name="y">多分Y。</param>
       <returns>返回String。</returns>
     </member>
-    <member name="M:MagicOnionServer.ICalcSerivce.test1Async(System.Int32,System.Int32)">
+    <member name="M:MagicOnionServer.ICalcService.test1Async(System.Int32,System.Int32)">
       <summary>
         测试。
       </summary>
       <returns>返回String。</returns>
+    </member>
+    <member name="T:MagicOnionServer.IStudentService">
+      <summary>
+        学生实体
+      </summary>
+    </member>
+    <member name="M:MagicOnionServer.IStudentService.GetStudent(System.Int32)">
+      <summary>
+        获取单个学生。
+      </summary>
+      <param name="ID">ID</param>
+      <returns>返回单个学生</returns>
     </member>
   </members>
 </doc>
