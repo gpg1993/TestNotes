@@ -19,6 +19,7 @@ namespace MagicOnionClient1
 
         public static async Task Client1()
         {
+
             //标准gRPC通道
             var channel = new Channel("localhost", 123456, ChannelCredentials.Insecure);
             //var channel = new Channel("localhost", 123456, new SslCredentials(File.ReadAllText("roots.pem")));

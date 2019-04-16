@@ -10,50 +10,20 @@ using System.IO;
 using System.Reflection;
 using MagicOnion;
 using MagicOnion.HttpGateway.Swagger;
+using MagicOnion.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace MagicOnionServer
 {
     /* magicOnion 对grpc服务包裹了一层，通过再magicOnion中设置参数
-     * 
+     * 通过kestrel代理
      * 
      * **/
     class Program
     {
         static void Main(string[] args)
         {
-            const string GrpcHost = "localhost";//服务地址
-            Environment.SetEnvironmentVariable("SETTINGS_MAX_HEADER_LIST_SIZE", "1000000");
-            GrpcEnvironment.SetLogger(new ConsoleLogger());
-            var service = MagicOnion.Server.MagicOnionEngine.BuildServerServiceDefinition(new MagicOnionOptions(true)
-            {
-                MagicOnionLogger = new MagicOnionLogToGrpcLoggerWithNamedDataDump(),
-                DefaultGroupRepositoryFactory = new RedisGroupRepositoryFactory(),
-                GlobalFilters = new MagicOnionFilterAttribute[]
-                { },
-                EnableCurrentContext = true,//允许本地异步启动当前服务上下文选项
-                DisableEmbeddedService = true,//不允许嵌入服务例如心跳（heartbeat）
-                                              //FormatterResolver= MessagePack.d              
-                IsReturnExceptionStackTraceInErrorDetail = false,//ture:程序本身处理异常，并返回消息。false:扩散到grpc引擎。默认为false
-                                                                 //ServiceLocator //添加扩充本地服务
-            });
-            //var server = new global::Grpc.Core.Server
-            //{
-            //    Services = { service },
-            //    Ports = { new ServerPort(GrpcHost, 123456, ServerCredentials.Insecure) }
-            //};
-            var server = new global::Grpc.Core.Server
-            {
-                Services = { service },
-                Ports = { new ServerPort(GrpcHost, 123456, ServerCredentials.Insecure) }
-            };
-            server.Start();
-
             var webHost = new WebHostBuilder()
-               .ConfigureServices(collection =>
-               {
-                   // 添加 MagicOnion服务默认，提供启动时引用
-                   collection.Add(new ServiceDescriptor(typeof(MagicOnionServiceDefinition), service));
-               })
                .UseKestrel()
                .UseStartup<Startup>()
                .UseUrls("http://localhost:5433")
@@ -64,6 +34,38 @@ namespace MagicOnionServer
 
         public class Startup
         {
+            MagicOnionServiceDefinition service;
+            public Startup()
+            {
+                const string GrpcHost = "localhost";//服务地址
+                Environment.SetEnvironmentVariable("SETTINGS_MAX_HEADER_LIST_SIZE", "1000000");
+                GrpcEnvironment.SetLogger(new ConsoleLogger());
+                service = MagicOnion.Server.MagicOnionEngine.BuildServerServiceDefinition(new MagicOnionOptions(true)
+                {
+                    MagicOnionLogger = new MagicOnionLogToGrpcLoggerWithNamedDataDump(),
+                    DefaultGroupRepositoryFactory = new RedisGroupRepositoryFactory(),
+                    GlobalFilters = new MagicOnionFilterAttribute[]
+                    { },
+                    EnableCurrentContext = true,//允许本地异步启动当前服务上下文选项
+                    DisableEmbeddedService = true,//不允许嵌入服务例如心跳（heartbeat）
+                                                  //FormatterResolver= MessagePack.d              
+                    IsReturnExceptionStackTraceInErrorDetail = false,//ture:程序本身处理异常，并返回消息。false:扩散到grpc引擎。默认为false
+                                                                     //ServiceLocator //添加扩充本地服务
+                });
+                var server = new global::Grpc.Core.Server
+                {
+                    Services = { service },
+                    Ports = { new ServerPort(GrpcHost, 123456, ServerCredentials.Insecure) }
+                };
+                server.Start();
+            }
+
+            public void ConfigureServices(IServiceCollection services)
+            {
+                // 添加 MagicOnion服务默认，提供启动时引用
+                services.Add(new ServiceDescriptor(typeof(MagicOnionServiceDefinition), service));
+            }
+
             public void Configure(IApplicationBuilder app, MagicOnionServiceDefinition magicOnion)
             {
                 // 选项：添加swagger的xml地址
@@ -96,8 +98,8 @@ namespace MagicOnionServer
                 // 一个是 Http1-JSON to gRPC-MagicOnion gateway(MagicOnionHttpGateway)
                 //channel 地址要和Grpc（Magiconion）的保持一致
                 //要想让rpc成为该web服务的接口，流量和协议被统一到你写的这个web项目中来，那么就要用个方法链接你和rpc
-                //这个web项目承接你的请求，然后web去调用rpc获取结果，再返回给你。
-                //因此需要下面这句话
+                //这个web项目承接你的请求，然后web去调用rpc获取结果，再返回给你。因此需要下面这句话
+                //这个中间件从源码中看出主要是为了协议转换和messagepack与json互转
                 app.UseMagicOnionHttpGateway(magicOnion.MethodHandlers, new Channel("localhost:123456", ChannelCredentials.Insecure));
             }
         }
