@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQTTClient1", "MQTTClient1\MQTTClient1.csproj", "{610C7B04-526F-46F9-838C-E9CA5089CAC1}"
 EndProject
@@ -34,8 +34,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicOnionServer", "MagicOnionServer\MagicOnionServer.csproj", "{3E12C38C-B397-41D7-8CA2-03D7F1EC139A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicOnionClient1", "MagicOnionClient\MagicOnionClient1.csproj", "{DBB45949-F45F-4546-8261-DFCC1072C7E1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicOnionTest01", "MagicOnionTest01\MagicOnionTest01.csproj", "{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,10 +89,6 @@ Global
 		{DBB45949-F45F-4546-8261-DFCC1072C7E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBB45949-F45F-4546-8261-DFCC1072C7E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB45949-F45F-4546-8261-DFCC1072C7E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,7 +106,6 @@ Global
 		{E586805E-BA62-4441-A382-8BD0A9146786} = {CEA1117D-8D2D-4074-BBAE-25BC650CA64B}
 		{3E12C38C-B397-41D7-8CA2-03D7F1EC139A} = {BF3009D3-61F9-4921-8B62-6A9CAD9E59E2}
 		{DBB45949-F45F-4546-8261-DFCC1072C7E1} = {BF3009D3-61F9-4921-8B62-6A9CAD9E59E2}
-		{D3434F3F-7F2E-44C8-AD8F-BC48EABDC9F8} = {BF3009D3-61F9-4921-8B62-6A9CAD9E59E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E608123-82AC-4233-B798-0369308838FF}
