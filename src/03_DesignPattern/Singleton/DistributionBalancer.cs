@@ -52,6 +52,12 @@ namespace Singleton
             return httpServers[index];
         }
 
+        public HttpServer GetHttpServerByRoundRobinWeight()
+        {
+            int index = LoadBalance.Start();
+            return httpServers[index];
+        }
+
         public HttpServer GetHttpServerByWeight()
         {
             return new HttpServer();
@@ -92,7 +98,7 @@ namespace Singleton
             currentIndex = -1;
             currentWeight = 0;
 
-            //获取服务器权重列表,从配置文件
+            //获取服务器权重列表,从配置文件;也可以注入权重信息
             weightList = GetWeightList();
             maxWeight = GetMaxWeight(weightList);
             gcd = GetMaxGCD(weightList);
