@@ -1,5 +1,6 @@
 ﻿using MagicOnion;
 using MagicOnion.Server;
+using MessagePack;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace MagicOnionServer
      * UnaryResult 包装返回的参数（返回结果格式化的工作）
      * 
      * **/
-    public interface ICalcSerivce : IService<ICalcSerivce>
+    public interface ICalcService : IService<ICalcService>
     {
         UnaryResult<string> test1Async();
         UnaryResult<string> SumAsync(int x, int y);
@@ -19,7 +20,7 @@ namespace MagicOnionServer
         UnaryResult<string> RideAsync(int x, int y);
         UnaryResult<string> ExceptAsync(int x, int y);
     }
-    public class CalcSerivce : ServiceBase<ICalcSerivce>, ICalcSerivce
+    public class CalcService : ServiceBase<ICalcService>, ICalcService
     {
         [CalcFilter]
         public async UnaryResult<string> ExceptAsync(int x, int y)
@@ -116,5 +117,46 @@ namespace MagicOnionServer
         }
     }
 
-
+    [MessagePackObject(true)]
+    public class Student
+    {
+        public int Id { get; set; }
+        public string name { get; set; }
+        public string Age { get; set; }
+        public double weight { get; set; }
+    }
+    public interface IStudentService : IService<IStudentService>
+    {
+        UnaryResult<Student> GetStudentAsync(int id);
+        UnaryResult<bool> AddStudent(Student student);
+        UnaryResult<List<Student>> GetAllStudent();
+    }
+    public class StudentService : ServiceBase<IStudentService>, IStudentService
+    {
+        public async UnaryResult<bool> AddStudent(Student student)
+        {
+            await Task.Delay(100);
+            students.Add(student);
+            return true;
+        }
+        public async UnaryResult<Student> GetStudentAsync(int id)
+        {
+            await Task.Delay(100);
+            Student student = students.Find(c => c.Id == id);
+            return student;
+        }
+        public UnaryResult<List<Student>> GetAllStudent()
+        {
+            return UnaryResult(students);
+        }
+        
+        private static List<Student> students = new List<Student>()
+        {
+            new Student { Id = 1, Age = "11", name = "Alice" },
+            new Student { Id = 2, Age = "12", name = "Bob" },
+            new Student { Id = 3, Age = "13", name = "Cat" },
+            new Student { Id = 4, Age = "14", name = "Dave" }
+        };
+        
+    }
 }

@@ -10,7 +10,7 @@ namespace CSRedisTest
             GeneralTest generalTest = new GeneralTest();
             CSRedisClient client = generalTest.CommonRedis();
             RedisHelper.Initialization(client);
-            RedisHelper.Set()
+            //RedisHelper.Set();
             Console.WriteLine("Hello World!");
         }
     }
