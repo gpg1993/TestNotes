@@ -28,9 +28,9 @@ namespace Prototype
             NovelCharacterlist.Add(new NovelCharacter { NovelCharacterAge = 40, NovelCharacterIsLead = 1, NovelCharacterName = "男1" });
             NovelCharacterlist.Add(new NovelCharacter { NovelCharacterAge = 21, NovelCharacterIsLead = 0, NovelCharacterName = "路人甲" });
             NovelCharacterlist.Add(new NovelCharacter { NovelCharacterAge = 21, NovelCharacterIsLead = 0, NovelCharacterName = "路人乙" });
-            romanticNovelPrototype.NovelCharacterList = NovelCharacterlist;
-            romanticNovelPrototype.NovelEvent = "咖啡厅相遇";
-            romanticNovelPrototype.NovelScene = "破解重圆";
+            romanticNovelPrototype1.NovelCharacterList = NovelCharacterlist;
+            romanticNovelPrototype1.NovelEvent = "咖啡厅相遇";
+            romanticNovelPrototype1.NovelScene = "破解重圆";
 
 
         }

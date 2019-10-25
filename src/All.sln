@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Redis", "01_Redis", "{0EAB91E2-C5EB-4F4A-9585-D6A264348DBF}"
 EndProject
@@ -62,6 +62,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "websocket-sharpcore", "08_NetworkProtocol\websocket-sharpcore\websocket-sharpcore.csproj", "{B546A971-2C37-4074-85A9-2BDCFB2B0748}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocketSharpServer", "08_NetworkProtocol\WebSocketSharpServer\WebSocketSharpServer.csproj", "{EB1FCFBF-42FE-428A-BD7A-6228A617488F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09_MQ", "09_MQ", "{246622E6-7872-4497-AB7A-024E68AFEB1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRDemo", "09_MQ\MediatRDemo\MediatRDemo.csproj", "{551A0748-A941-4224-8FFC-3CCD4D4716D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +153,10 @@ Global
 		{EB1FCFBF-42FE-428A-BD7A-6228A617488F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB1FCFBF-42FE-428A-BD7A-6228A617488F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB1FCFBF-42FE-428A-BD7A-6228A617488F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551A0748-A941-4224-8FFC-3CCD4D4716D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551A0748-A941-4224-8FFC-3CCD4D4716D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551A0748-A941-4224-8FFC-3CCD4D4716D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551A0748-A941-4224-8FFC-3CCD4D4716D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +184,7 @@ Global
 		{35A09325-48AC-47D5-AC0A-4611306EF112} = {9A4A6E4A-30F4-4CDE-BB67-0DF7F4CA6097}
 		{B546A971-2C37-4074-85A9-2BDCFB2B0748} = {9A4A6E4A-30F4-4CDE-BB67-0DF7F4CA6097}
 		{EB1FCFBF-42FE-428A-BD7A-6228A617488F} = {9A4A6E4A-30F4-4CDE-BB67-0DF7F4CA6097}
+		{551A0748-A941-4224-8FFC-3CCD4D4716D1} = {246622E6-7872-4497-AB7A-024E68AFEB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BA9286D-15D7-4C6C-897E-C7AFD2D86176}
