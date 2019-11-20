@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetty.Buffers.Tests", "DotNetty.Buffers.Tests\DotNetty.Buffers.Tests.csproj", "{F3F376BD-DDC6-4F45-9D5D-7F50C464E82C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Http.Server", "Http.Server\Http.Server.csproj", "{024A960E-DA2E-4ACB-B4F5-710137107CEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F3F376BD-DDC6-4F45-9D5D-7F50C464E82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3F376BD-DDC6-4F45-9D5D-7F50C464E82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3F376BD-DDC6-4F45-9D5D-7F50C464E82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3F376BD-DDC6-4F45-9D5D-7F50C464E82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024A960E-DA2E-4ACB-B4F5-710137107CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024A960E-DA2E-4ACB-B4F5-710137107CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024A960E-DA2E-4ACB-B4F5-710137107CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024A960E-DA2E-4ACB-B4F5-710137107CEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
